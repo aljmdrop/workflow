@@ -1,0 +1,10 @@
+name: mi primer roboot
+
+on: [push]
+
+jobs:
+ saludo:
+  runs-on:ubuntu-latest
+  steps:
+  -name: paso 1
+  rub: echo "hola mundo"
