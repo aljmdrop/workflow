@@ -1,0 +1,12 @@
+name: mi primer robot
+
+
+on: [push]
+
+
+jobs:
+  saludo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: paso 1
+        run: echo "Hola, este es mi primer robot en GitHub Actions"
