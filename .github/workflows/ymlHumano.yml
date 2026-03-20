@@ -14,5 +14,5 @@ jobs:
       - name: paso 1
         run: echo "Hola, este es mi segundo robot en GitHub Actions"
       - name: validar secret
-        run: echo "El valor del secreto es ${{ secrets.TOKEN}}"     
+        run: echo "El valor del secreto es ${{ secrets.TOKEN }}"     
 
