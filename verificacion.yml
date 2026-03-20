@@ -1,0 +1,27 @@
+name: security verification
+
+
+on:
+  push:
+    branches:[main]
+  workflow-dispatch:
+
+
+jobs:
+  check-secrets:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Cloanar el repositorio
+        uses: actions/checkout@v2
+        
+      - name: validar presencia de secretos
+        shell: bash
+        run: |
+          if [-z "${{ secrets.TOKEN }}" ]; then
+            echo "ERROR: el secret 'MI_TOKEN_SECRETO' no está definido."
+            echo "ve a Settings > Secrets > Actions y agrega el secreto con el nombre"
+            exit 1
+          else
+            echo "EXITOSO: el secreto esta cargado y listopara usaerse"
+          fi
